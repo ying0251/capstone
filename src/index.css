@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -11,50 +11,140 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+} */
+
+* {
+  font-family: "Karla", sans-serif;
+  
+  /* font-family: "Markazi Text", serif; */
 }
 
+#root {
+  
+  margin: 0 10%;  
+  text-align: center;
+  
+}
 
 body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  
   min-height: 100vh;
+} 
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.header-logo > img {
+  min-width: 200px;
+  width: 25%;
+  height: auto;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.menu,.cart {
+  display: none;
+  
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+nav ul {
+  display: flex;
+  
+}
+
+nav li {
+  display: block;
+  white-space: nowrap;
+  margin-left: 2rem;
+}
+
+a {
+  text-decoration: none;
+  
+}
+
+
+.main {
+  height: 2900px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: solid #f4ce14;
+  
+}
+
+.footer-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.information li {
+  text-align: left;
+}
+
+.footer>.footer-logo {
+  width: 15%;
+  min-width: 120px;
+  margin-right: 10%;
+  margin-top: 1rem;
+}
+
+.footer-logo img {
+  width: 100%;
+}
+
+.footer h4 {
+  margin-top: 1rem;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.footer ul {
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.footer li {
+  display: block;
+  white-space: nowrap;
+  text-align: left;
+}
+
+
+
+
+/* For mobile phones: */
+
+@media screen and (max-width:1280px) {
+  nav ul {
+    display: none;
   }
-  a:hover {
-    color: #747bff;
+
+  .menu,.cart {
+    display: block;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .footer {
+    flex-direction: column-reverse;
+    /* justify-content: center; */
+    text-align: left;
+  }
+}
+
+@media screen and (max-width:900px) {
+  
+
+  .footer-information {
+    flex-direction: column;
   }
 }
