@@ -1,7 +1,8 @@
+import { useState } from "react";
 import Card from "./Card";
 import MenuButton from "./MenuButton";
 
-const specials = [
+const menus = [
     {
         name: "Greek salad",
         price: "12.99",
@@ -34,9 +35,20 @@ const specials = [
     },
 ];
 
-const menuNames = ["Lunch", "Mains", "Desserts", "A La Carte", "Specials"];
+const menuNames = {
+    All: ["Greek salad", "Bruchetta", "Lemon dessert", "Grilled fish", "Pasta"],
+    Lunch: ["Greek salad", "Grilled fish", "Pasta"],
+    Mains: ["Grilled fish", "Pasta"],
+    Desserts: ["Lemon dessert"],
+    "A La Carte": ["Greek salad", "Bruchetta", "Grilled fish", "Pasta"],
+    Specials: ["Greek salad", "Bruchetta", "Lemon dessert"],
+};
 
 function Highlights() {
+    const [filter, setFilter] = useState("All");
+    function handleClick(e) {
+        console.log(e.target.value);
+    }
     return (
         <section className="highlights">
             <div className="highlights-banner">
@@ -47,14 +59,18 @@ function Highlights() {
                 <h5>ORDER FOR DELIVERY</h5>
                 <div className="highlights-menu-container">
                     <div className="highlights-menu">
-                        {menuNames.map((menuName, index) => (
-                            <MenuButton key={index} menuName={menuName} />
+                        {Object.keys(menuNames).map((menuName, index) => (
+                            <MenuButton
+                                key={index}
+                                menuName={menuName}
+                                handleClick={handleClick}
+                            />
                         ))}
                     </div>
                 </div>
             </div>
             <div className="cards">
-                {specials.map((special, index) => (
+                {menus.map((special, index) => (
                     <Card
                         key={index}
                         name={special.name}

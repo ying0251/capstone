@@ -1,7 +1,9 @@
 export default function MenuButton(props) {
     return (
         <div>
-            <button>{props.menuName}</button>
+            <button onClick={() => props.handleClick()}>
+                {props.menuName}
+            </button>
         </div>
     );
 }

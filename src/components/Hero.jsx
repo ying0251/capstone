@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
     return (
         <section className="hero-section">
@@ -17,7 +19,9 @@ export default function Hero() {
                         />
                     </div>
                 </div>
-                <button>Reserve a table</button>
+                <button>
+                    <Link to="/booking">Reserve a table</Link>
+                </button>
             </div>
             <div className="hero-image">
                 <img

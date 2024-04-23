@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
@@ -18,7 +19,13 @@ function Header() {
                 </svg>
             </div>
             <div className="header-logo">
-                <img src="../src/assets/images/Logo.png" alt="logo" size="lg" />
+                <Link to="/">
+                    <img
+                        src="../src/assets/images/Logo.png"
+                        alt="logo"
+                        size="lg"
+                    />
+                </Link>
             </div>
             <Nav />
             <div className="cart">
